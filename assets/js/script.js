@@ -13,10 +13,6 @@ function citySearch(event) {
 
   // Maybe validate only for valid cities next
   if (city) {
-    setNewCityToLocalStorage(city);
-
-    // Rendering Storage after adding new city
-    renderStorage();
     renderCurrentWeather(city);
   }
 }
@@ -35,7 +31,6 @@ function renderCurrentWeather(city) {
     })
     .then(function (data) {
       console.log(data);
-      // Transfer content to HTML
       var weatherToday = document.getElementById("today");
       weatherToday.innerHTML = "<h2>" + city;
 
@@ -54,6 +49,10 @@ function renderCurrentWeather(city) {
       weatherToday.appendChild(tempCelsius);
       weatherToday.appendChild(wind);
       weatherToday.appendChild(humidity);
+
+      setNewCityToLocalStorage(city);
+      // Rendering Storage after adding new city
+      renderStorage();
     })
     .catch(function (error) {
       console.error("Error fetching data:", error);
