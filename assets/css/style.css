@@ -31,8 +31,8 @@
 
 .city-button {
   background-color: rgb(187, 184, 184);
-  padding: 10px;
+  height: 42px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
