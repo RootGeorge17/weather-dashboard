@@ -1,5 +1,5 @@
 .weather-header {
-  color: white;
+  color: rgb(228, 216, 216);
   background-image: linear-gradient(to left top, #2b60ca, #27086b);
   margin-bottom: 15px;
 }

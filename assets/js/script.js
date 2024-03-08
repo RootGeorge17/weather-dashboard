@@ -96,7 +96,7 @@ function renderForecast(lat, lon) {
 
         var forecastCard = `
               <div class="card border border-white" style="width: 20%;">
-                  <div class="card-body text-white" style="background-color: #2D3E50">
+                  <div class="card-body text-white" style="background-image: linear-gradient(to left top, #2b60ca, #27086b)">
                       <h5 class="card-title">${formattedDate}</h5>
                       <p class="card-text"><img src="https://openweathermap.org/img/wn/${forecastCardIcon}@2x.png"/>
                       </p>
