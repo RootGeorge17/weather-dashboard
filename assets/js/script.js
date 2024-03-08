@@ -1,6 +1,7 @@
 var searchButton = document.getElementById("search-button");
 var searchInput = document.getElementById("search-input");
 var APItoken = "604a01f8b6790b14c2c34ec56f00eaa6";
+var currentDate = dayjs().format("DD/MM/YYYY");
 
 // Register event listener with callback function citySearch
 searchButton.addEventListener("click", citySearch);
@@ -32,8 +33,10 @@ function renderCurrentWeather(city) {
     .then(function (data) {
       console.log(data);
       var weatherToday = document.getElementById("today");
+      var weatherTodayIcon = data.weather[0].icon;
+      var todayIcon = `<img src="https://openweathermap.org/img/wn/${weatherTodayIcon}@2x.png"/>`;
       cityName = data.name ? data.name : data.message;
-      weatherToday.innerHTML = "<h2>" + cityName;
+      weatherToday.innerHTML = "<h2>" + cityName + " (" + currentDate + ")" + todayIcon;
 
       var tempCelsius = document.createElement("p");
       var tempInCelsius = data.main.temp;
@@ -52,7 +55,7 @@ function renderCurrentWeather(city) {
       weatherToday.appendChild(humidity);
 
       setNewCityToLocalStorage(city);
-      // Rendering Storage after adding new city
+      // Rendering Storage
       renderStorage();
     })
     .catch(function (error) {
