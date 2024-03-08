@@ -32,7 +32,8 @@ function renderCurrentWeather(city) {
     .then(function (data) {
       console.log(data);
       var weatherToday = document.getElementById("today");
-      weatherToday.innerHTML = "<h2>" + city;
+      cityName = data.name ? data.name : data.message;
+      weatherToday.innerHTML = "<h2>" + cityName;
 
       var tempCelsius = document.createElement("p");
       var tempInCelsius = data.main.temp;
@@ -55,6 +56,7 @@ function renderCurrentWeather(city) {
       renderStorage();
     })
     .catch(function (error) {
+      alert("Error fetching data, city not found");
       console.error("Error fetching data:", error);
     });
 }
