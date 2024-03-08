@@ -9,7 +9,7 @@ Web application that allows users to search for weather information of any city 
 #### Access the application on: 
 #### The following gif shows the web application's appearance and functionality:
 
-![](/assets/images/10-server-side-apis-challenge-demo.png)
+![](/assets/images/application.png)
 
 ## Installation
 
