@@ -166,6 +166,9 @@ function renderStorage() {
     var listCity = document.createElement("button");
     listCity.textContent = city;
     listCity.classList.add("city-button");
+    listCity.addEventListener("click", function () {
+      renderCurrentWeather(city);
+    });
     citiesList.appendChild(listCity);
   });
 }
@@ -192,3 +195,4 @@ function setNewCityToLocalStorage(city) {
 
 // Initial rendering of city search history from local storage
 renderStorage();
+
