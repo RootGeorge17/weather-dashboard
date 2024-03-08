@@ -6,7 +6,7 @@ Web application that allows users to search for weather information of any city 
 
 ## Usage
 
-#### Access the application on: 
+#### Access the application on: https://rootgeorge17.github.io/weather-dashboard/
 #### The following gif shows the web application's appearance and functionality:
 
 ![](/assets/images/application.png)
