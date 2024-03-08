@@ -89,8 +89,10 @@ function getCitiesFromLocalStorage() {
 // Function to save cities to local storage
 function setNewCityToLocalStorage(city) {
   var cities = getCitiesFromLocalStorage();
-  cities.push(city);
-  localStorage.setItem("cities", JSON.stringify(cities));
+  if (!cities.includes(city)) {
+    cities.push(city);
+    localStorage.setItem("cities", JSON.stringify(cities));
+  }
 }
 
 // Initial rendering of storage
