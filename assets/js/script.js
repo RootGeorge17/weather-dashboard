@@ -36,6 +36,8 @@ function renderCurrentWeather(city) {
       var weatherTodayIcon = data.weather[0].icon;
       var todayIcon = `<img src="https://openweathermap.org/img/wn/${weatherTodayIcon}@2x.png"/>`;
       cityName = data.name ? data.name : data.message;
+      weatherToday.style.border = "2px solid black";
+      weatherToday.style.padding = "10px";
       weatherToday.innerHTML = "<h2>" + cityName + " (" + currentDate + ")" + todayIcon;
 
       var tempCelsius = document.createElement("p");
