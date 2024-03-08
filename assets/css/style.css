@@ -30,8 +30,9 @@
 }
 
 .city-button {
-  background-color: rgb(187, 184, 184);
-  height: 42px;
+  color: white;
+  background-image: linear-gradient(to left top, #2b60ca, #27086b);
+  height: 40px;
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
