@@ -59,11 +59,63 @@ function renderCurrentWeather(city) {
       setNewCityToLocalStorage(city);
       // Rendering Storage
       renderStorage();
+      renderForecast(data.coord.lat, data.coord.lon);
     })
     .catch(function (error) {
       alert("Error fetching data, city not found");
       console.error("Error fetching data:", error);
     });
+}
+
+function renderForecast(lat, lon) {
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
+    lat +
+    "&lon=" +
+    lon +
+    "&units=metric" +
+    "&appid=" +
+    APItoken;
+
+  fetch(queryURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var weatherForecast = document.getElementById("forecast");
+      weatherForecast.innerHTML = "<h2><b>5-Day Forecast: </b></h2>";
+
+      for (let i = 7; i < data.list.length; i += 7) {
+        var forecastItem = data.list[i];
+        var forecastCardDate = forecastItem.dt_txt.split(" ")[0];
+        var formattedDate = formatDate(forecastCardDate);
+        var forecastCardIcon = forecastItem.weather[0].icon;
+        var forecastCardTemp = forecastItem.main.temp;
+        var forecastCardWind = forecastItem.wind.speed;
+        var forecastCardHumidity = forecastItem.main.humidity;
+
+        var forecastCard = `
+              <div class="card border border-white" style="width: 20%;">
+                  <div class="card-body text-white" style="background-color: #2D3E50">
+                      <h5 class="card-title">${formattedDate}</h5>
+                      <p class="card-text"><img src="https://openweathermap.org/img/wn/${forecastCardIcon}@2x.png"/>
+                      </p>
+                      <p class="card-text">Temp: ${forecastCardTemp} °C</p>
+                      <p class="card-text">Wind: ${forecastCardWind} KPH</p>
+                      <p class="card-text">Humidity: ${forecastCardHumidity} %</p>
+                  </div>
+              </div>`;
+        weatherForecast.insertAdjacentHTML('beforeend', forecastCard);
+      }
+    })
+    .catch(function (error) {
+      console.error("Error fetching data:", error);
+    });
+}
+
+function formatDate(date) {
+  var parts = date.split("-");
+  return parts[2] + "/" + parts[1] + "/" + parts[0];
 }
 
 function renderStorage() {
