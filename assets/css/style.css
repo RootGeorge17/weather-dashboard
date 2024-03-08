@@ -1,0 +1,30 @@
+.weather-header {
+  color: white;
+  background-image: linear-gradient(to left top, #2b60ca, #27086b);
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: block;
+}
+
+#search-input {
+  text-indent: 5px;
+  width: 100%;
+  border: black solid 1px;
+  height: 40px;
+}
+
+.input-group-append {
+  margin-top: 10px;
+}
+
+.search-button {
+  color: white;
+  background-image: linear-gradient(to left top, #2b60ca, #27086b);
+  width: 100%;
+}
+
+.hr {
+  border-top: 2px solid black;
+}
