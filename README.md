@@ -7,7 +7,7 @@
 #### Access the application on: 
 #### The following gif shows the web application's appearance and functionality:
 
-![](/assets/images/10-server-side-apis-challenge-demo.gif)
+![](/assets/images/10-server-side-apis-challenge-demo.png)
 
 ## Installation
 
