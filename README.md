@@ -2,6 +2,8 @@
 
 ## Description
 
+Web application that allows users to search for weather information of any city worldwide. The application displays the current weather conditions, including temperature, wind speed, and humidity, as well as a 5-day weather forecast. Additionally, it provides a history feature that stores previously searched cities for quick access to their weather information.
+
 ## Usage
 
 #### Access the application on: 
