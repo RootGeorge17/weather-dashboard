@@ -28,3 +28,11 @@
 .hr {
   border-top: 2px solid black;
 }
+
+.city-button {
+  background-color: rgb(187, 184, 184);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
